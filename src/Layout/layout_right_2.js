@@ -5,6 +5,7 @@ import './layout.css'
 import {connect} from "react-redux";
 import axios from 'axios'
 import store from   '../store/index'
+import {getTableRight_2_Init_Action} from './store/actionCreactor'
 
 
 const columns = [
@@ -57,11 +58,8 @@ class TableRight_2 extends Component{
 	/*生命周期初始化组件的数据,生命周期函数写在类里*/
 	componentDidMount(){
 		axios.get("http://localhost:8080/listInit").then((data)=>{
-			const action = {
-				type : 'TableRight_2_Init',
-				value : data.data
-			}
 
+			const action = getTableRight_2_Init_Action(data.data)
 			store.dispatch(action);
 
 
@@ -80,7 +78,6 @@ const mapStateToProps = (state)=>{
 
 const mapDispathToProps = (dispatch)=>{
 	return {
-
 
 		}
 }
