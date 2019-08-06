@@ -30,11 +30,6 @@ class SiderDemo extends React.Component {
         if(this.props.rightContent.getIn(['layout','turnTo']) === '2'){
             return <TableRight_2/>;
         }
-
-
-
-
-
     }
 
     render() {
