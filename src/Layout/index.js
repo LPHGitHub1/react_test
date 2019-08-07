@@ -24,10 +24,10 @@ class SiderDemo extends React.Component {
     /* 动态显示右边内容 */
     changeConten(){
 
-        if(this.props.rightContent.getIn(['layout','turnTo']) === '1'){
+        if(this.props.rightContent === '1'){
             return <TableRight_1/>;
         }
-        if(this.props.rightContent.getIn(['layout','turnTo']) === '2'){
+        if(this.props.rightContent === '2'){
             return <TableRight_2/>;
         }
     }
@@ -98,6 +98,7 @@ class SiderDemo extends React.Component {
                         </Breadcrumb>
 
                         <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
+                            {/* 再次刷新右边组件*/}
                             {this.changeConten()}
                         </div>
                     </Content>
@@ -112,7 +113,8 @@ class SiderDemo extends React.Component {
 /*值区,在这里，创建的store会自动把值传过来*/
 const mapStateToProps = (state)=> {
     return {
-        rightContent : state
+        /*获取redux里面右边栏是哪个*/
+        rightContent : state.getIn(['layout','turnTo'])
 
     }
 }
@@ -129,7 +131,6 @@ const mapDispatchToProps = (dispatch)=> {
             }
             dispatch(action);
         },
-
     }
 }
 

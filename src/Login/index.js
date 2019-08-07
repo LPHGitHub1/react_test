@@ -45,7 +45,7 @@ class NormalLoginForm extends Component{
                                 valuePropName: 'checked',
                                 initialValue: true,
                             })(<Checkbox>记住密码</Checkbox>)}
-                            <a className="login-form-forgot" href="">
+                            <a className="login-form-forgot" href="/ParamTranTest/1">
                                 忘记密码？
                             </a>
                             <Button type="primary" htmlType="submit" className="login-form-button">

@@ -6,6 +6,7 @@ import SiderDemo from "./Layout";
 // 使用react-redux
 import store from './store/index'
 import {Provider} from 'react-redux'
+import ParamTranTest from "./Layout/loadable";
 
 
 class App extends React.Component{
@@ -17,6 +18,7 @@ class App extends React.Component{
                     <BrowserRouter>
                         <Route exact path='/'  component={NormalLoginForm}/>
                         <Route exact path='/layout' component={SiderDemo}/>
+                        <Route exact path='/ParamTranTest/:id' component={ParamTranTest}/>
                     </BrowserRouter>
                 </Provider>
 
