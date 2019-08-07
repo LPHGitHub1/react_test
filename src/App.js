@@ -16,9 +16,11 @@ class App extends React.Component{
             <div>
                 <Provider store={store}>
                     <BrowserRouter>
+					
                         <Route exact path='/'  component={NormalLoginForm}/>
                         <Route exact path='/layout' component={SiderDemo}/>
                         <Route exact path='/ParamTranTest/:id' component={ParamTranTest}/>
+
                     </BrowserRouter>
                 </Provider>
 

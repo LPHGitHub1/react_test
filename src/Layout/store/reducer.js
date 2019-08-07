@@ -8,7 +8,7 @@ const  defaultState = fromJS({
 
 export default (state=defaultState, action)=>{
 
-	if(action.type === 'change_left_tcontent'){
+	if(action.type === 'change_right_tcontent'){
 		/*使用了immutable*/
 		return state.set('turnTo',action.value);
 	}

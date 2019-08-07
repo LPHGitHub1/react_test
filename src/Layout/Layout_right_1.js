@@ -4,7 +4,7 @@ import './layout.css'
 import { Carousel } from 'antd';
 
 
-class TableRight_1 extends Component{
+class Layout_right_1 extends Component{
 	render(){
 		return(
 			<Fragment>
@@ -29,4 +29,4 @@ class TableRight_1 extends Component{
 
 }
 
-export default TableRight_1;
+export default Layout_right_1;
