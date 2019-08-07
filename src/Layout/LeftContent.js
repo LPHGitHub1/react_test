@@ -84,12 +84,12 @@ const mapStateToProps = ()=>{
 /*方法区，在这里，可以直接提交action*/
 const mapDispatchToProps = (dispatch)=>{
     return{
+        /*根据传下来的value确定右边显示的版块*/
         counts(value){
 
             const action = {
                 type : 'change_right_tcontent',
                 value : value
-
             }
             dispatch(action);
         },

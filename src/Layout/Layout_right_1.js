@@ -2,13 +2,8 @@ import React, {Component, Fragment} from 'react';
 import { Table } from 'antd';
 import 'antd/dist/antd.css'
 import './layout.css'
-import {connect} from "react-redux";
-import axios from 'axios'
-import store from   '../store/index'
-import {getTableRight_2_Init_Action} from './store/actionCreactor'
 
-
-const columns = [
+const columns = [/*在这里加列*/
 	{
 		title: 'Name',
 		dataIndex: 'name',
@@ -19,12 +14,16 @@ const columns = [
 		sorter: (a, b) => a.name.length - b.name.length,
 		sortDirections: ['descend'],
 	},
+
+
 	{
 		title: 'Age',
 		dataIndex: 'age',
 		defaultSortOrder: 'descend',
 		sorter: (a, b) => a.age - b.age,
 	},
+
+
 	{
 		title: 'Address',
 		dataIndex: 'address',
@@ -37,52 +36,51 @@ const columns = [
 ];
 
 
+
+const data = [
+	{
+		key: '1',
+		name: 'John Brown',
+		age: 32,
+		address: 'New York No. 1 Lake Park',
+	},
+	{
+		key: '2',
+		name: 'Jim Green',
+		age: 42,
+		address: 'London No. 1 Lake Park',
+	},
+	{
+		key: '3',
+		name: 'Joe Black',
+		age: 32,
+		address: 'Sidney No. 1 Lake Park',
+	},
+	{
+		key: '4',
+		name: 'Jim Red',
+		age: 32,
+		address: 'London No. 2 Lake Park',
+	},
+];
+
+
 function onChange(pagination, filters, sorter) {
 	console.log('params', pagination, filters, sorter);
 }
 
-class TableRight_2 extends Component{
 
+class Layout_right_1 extends Component{
 	render(){
 		return(
-			<Fragment >
-				<h2>TableRight_2</h2>
-				<Table columns={columns} dataSource={this.props.TableRight_2_Init} onChange={onChange} />
+			<Fragment>
+				<h2>TableRight_1</h2>
+				<Table columns={columns} dataSource={data} onChange={onChange} />
 			</Fragment>
 
 		)
 	}
 
-
-
-	/*生命周期初始化组件的数据,生命周期函数写在类里*/
-	componentDidMount(){
-		axios.get("http://localhost:8080/listInit").then((data)=>{
-
-			const action = getTableRight_2_Init_Action(data.data)
-			store.dispatch(action);
-
-
-		}).catch((data)=>{
-			alert(data)
-		})
-	}
-
 }
 
-const mapStateToProps = (state)=>{
-	return {
-		TableRight_2_Init : state.getIn(['layout','TableRight_2_Init'])
-	}
-}
-
-const mapDispathToProps = (dispatch)=>{
-	return {
-
-		}
-}
-
-
-
-export default connect(mapStateToProps, mapDispathToProps)(TableRight_2);
-
+export default Layout_right_1;

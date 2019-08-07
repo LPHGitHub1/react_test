@@ -17,6 +17,7 @@ class App extends React.Component{
                     <BrowserRouter>
                         <Route exact path='/'  component={NormalLoginForm}/>
                         <Route exact path='/layout' component={SiderDemo}/>
+
                     </BrowserRouter>
                 </Provider>
 
