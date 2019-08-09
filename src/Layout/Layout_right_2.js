@@ -62,7 +62,6 @@ class Layout_right_2 extends Component{
 			const action = getTableRight_2_Init_Action(data.data)
 			store.dispatch(action);
 
-
 		}).catch((data)=>{
 			alert(data)
 		})
